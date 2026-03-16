@@ -1,4 +1,5 @@
 [gd_scene format=3]
+[ext_resource type="Script" path="res://scripts/DebugCollision.gd" id="99_debug_coll"]
 [ext_resource type="Texture2D" path="res://art/generated/floor_tile_3d.png" id="20_floor_tex"]
 [ext_resource type="Texture2D" path="res://art/generated/wall_tile_3d.png" id="21_wall_tex"]
 
@@ -64,6 +65,7 @@ size = Vector3(2.0, 0.25, 0.25)
 
 
 [node name="Tycoon3D" type="Node3D"]
+script = ExtResource("99_debug_coll")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 rotation = Vector3(-0.9, -0.6, 0)
@@ -81,44 +83,44 @@ position = Vector3(0, -0.02, 0)
 [node name="Walls" type="Node3D" parent="."]
 
 [node name="NorthWall" type="StaticBody3D" parent="Walls"]
+position = Vector3(0, 1.2, -13)
 [node name="Collider" type="CollisionShape3D" parent="Walls/NorthWall"]
 shape = SubResource("BoxShape3D_wall_h")
 [node name="Visual" type="MeshInstance3D" parent="Walls/NorthWall"]
 mesh = SubResource("BoxMesh_wall_h")
 material_override = SubResource("StandardMaterial3D_wall")
-position = Vector3(0, 1.2, -13)
 
 [node name="WestWall" type="StaticBody3D" parent="Walls"]
+position = Vector3(-18, 1.2, 0)
 [node name="Collider" type="CollisionShape3D" parent="Walls/WestWall"]
 shape = SubResource("BoxShape3D_wall_v")
 [node name="Visual" type="MeshInstance3D" parent="Walls/WestWall"]
 mesh = SubResource("BoxMesh_wall_v")
 material_override = SubResource("StandardMaterial3D_wall")
-position = Vector3(-18, 1.2, 0)
 
 [node name="EastWall" type="StaticBody3D" parent="Walls"]
+position = Vector3(18, 1.2, 0)
 [node name="Collider" type="CollisionShape3D" parent="Walls/EastWall"]
 shape = SubResource("BoxShape3D_wall_v")
 [node name="Visual" type="MeshInstance3D" parent="Walls/EastWall"]
 mesh = SubResource("BoxMesh_wall_v")
 material_override = SubResource("StandardMaterial3D_wall")
-position = Vector3(18, 1.2, 0)
 
 [node name="SouthWallLeft" type="StaticBody3D" parent="Walls"]
+position = Vector3(-7, 1.2, 13)
 [node name="Collider" type="CollisionShape3D" parent="Walls/SouthWallLeft"]
 shape = SubResource("BoxShape3D_wall_south_left")
 [node name="Visual" type="MeshInstance3D" parent="Walls/SouthWallLeft"]
 mesh = SubResource("BoxMesh_wall_south_left")
 material_override = SubResource("StandardMaterial3D_wall")
-position = Vector3(-7, 1.2, 13)
 
 [node name="SouthWallRight" type="StaticBody3D" parent="Walls"]
+position = Vector3(7, 1.2, 13)
 [node name="Collider" type="CollisionShape3D" parent="Walls/SouthWallRight"]
 shape = SubResource("BoxShape3D_wall_south_right")
 [node name="Visual" type="MeshInstance3D" parent="Walls/SouthWallRight"]
 mesh = SubResource("BoxMesh_wall_south_right")
 material_override = SubResource("StandardMaterial3D_wall")
-position = Vector3(7, 1.2, 13)
 
 [node name="EntryPoint" type="Marker3D" parent="."]
 position = Vector3(-16.5, 0, 12)
