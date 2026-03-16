@@ -24,7 +24,6 @@
 
 [ext_resource type="Texture2D" path="res://art/props/exhibit_case.png" id="14_ex_case"]
 
-[ext_resource type="Texture2D" path="res://art/tiles/floor.png" id="5_floor"]
 
 [ext_resource type="PackedScene" path="res://scenes/Manager.tscn" id="15_manager_scene"]
 
@@ -43,11 +42,6 @@ customer_scene = ExtResource("2_v1gob")
 position = Vector2(0, 0)
 enabled = true
 
-[node name="Floor" type="TextureRect" parent="World"]
-position = Vector2(-384, -216)
-size = Vector2(768, 432)
-texture = ExtResource("5_floor")
-tile = true
 
 [node name="Room" type="Node2D" parent="World"]
 y_sort_enabled = true
@@ -55,6 +49,38 @@ y_sort_enabled = true
 y_sort_enabled = true
 [node name="Manager" parent="World/Entities" instance=ExtResource("15_manager_scene")]
 position = Vector2(-120, 40)
+
+[node name="IntroRoom" type="Node2D" parent="World/Room"]
+
+[node name="Title" type="Label" parent="World/Room/IntroRoom"]
+position = Vector2(-410, -300)
+text = "Introduction to Museum"
+
+[node name="Floor" type="ColorRect" parent="World/Room/IntroRoom"]
+color = Color(0.16, 0.16, 0.18, 1)
+position = Vector2(-420, -240)
+size = Vector2(840, 480)
+
+[node name="WallTop" type="ColorRect" parent="World/Room/IntroRoom"]
+color = Color(0.07, 0.07, 0.08, 1)
+position = Vector2(-440, -260)
+size = Vector2(880, 20)
+
+[node name="WallBottom" type="ColorRect" parent="World/Room/IntroRoom"]
+color = Color(0.07, 0.07, 0.08, 1)
+position = Vector2(-440, 240)
+size = Vector2(880, 20)
+
+[node name="WallLeft" type="ColorRect" parent="World/Room/IntroRoom"]
+color = Color(0.07, 0.07, 0.08, 1)
+position = Vector2(-440, -260)
+size = Vector2(20, 520)
+
+[node name="WallRight" type="ColorRect" parent="World/Room/IntroRoom"]
+color = Color(0.07, 0.07, 0.08, 1)
+position = Vector2(440, -260)
+size = Vector2(20, 520)
+
 
 
 
@@ -95,26 +121,9 @@ text = "+ $10 (test)"
 script = ExtResource("6_popup_spawner")
 popup_scene = ExtResource("7_popup_scene")
 
-[node name="Walls" type="Node2D" parent="World/Room"]
-
-[node name="WallN" type="Sprite2D" parent="World/Room/Walls"]
-position = Vector2(0, -240)
-texture = ExtResource("8_wall_n")
-
-[node name="WallS" type="Sprite2D" parent="World/Room/Walls"]
-position = Vector2(0, 240)
-texture = ExtResource("9_wall_s")
-
-[node name="WallE" type="Sprite2D" parent="World/Room/Walls"]
-position = Vector2(380, 0)
-texture = ExtResource("10_wall_e")
-
-[node name="WallW" type="Sprite2D" parent="World/Room/Walls"]
-position = Vector2(-380, 0)
-texture = ExtResource("11_wall_w")
 
 [node name="Exhibit1" type="Area2D" parent="World/Room"]
-position = Vector2(120, -40)
+position = Vector2(-220, -80)
 script = ExtResource("3_jw32o")
 price = 25
 
@@ -126,7 +135,7 @@ shape = SubResource("RectangleShape2D_kln2b")
 texture = ExtResource("12_ex_sword")
 
 [node name="Exhibit2" type="Area2D" parent="World/Room"]
-position = Vector2(220, 60)
+position = Vector2(0, 40)
 script = ExtResource("3_jw32o")
 price = 40
 
@@ -138,7 +147,7 @@ shape = SubResource("RectangleShape2D_kln2b")
 texture = ExtResource("13_ex_books")
 
 [node name="Exhibit3" type="Area2D" parent="World/Room"]
-position = Vector2(20, 120)
+position = Vector2(220, -40)
 script = ExtResource("3_jw32o")
 price = 15
 
