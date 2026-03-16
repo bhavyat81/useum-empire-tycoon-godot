@@ -11,3 +11,8 @@ Thumbs.db
 
 # Editor backups
 *~
+
+# Backups / temp
+*.bak
+*.bak_*
+*.tmp
