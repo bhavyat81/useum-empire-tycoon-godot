@@ -10,6 +10,20 @@
 [ext_resource type="Script" path="res://scripts/ui/MoneyPopupSpawner.gd" id="6_popup_spawner"]
 [ext_resource type="PackedScene" path="res://scenes/ui/MoneyPopup.tscn" id="7_popup_scene"]
 
+[ext_resource type="Texture2D" path="res://art/props/wall_n.png" id="8_wall_n"]
+
+[ext_resource type="Texture2D" path="res://art/props/wall_s.png" id="9_wall_s"]
+
+[ext_resource type="Texture2D" path="res://art/props/wall_e.png" id="10_wall_e"]
+
+[ext_resource type="Texture2D" path="res://art/props/wall_w.png" id="11_wall_w"]
+
+[ext_resource type="Texture2D" path="res://art/props/exhibit_sword.png" id="12_ex_sword"]
+
+[ext_resource type="Texture2D" path="res://art/props/exhibit_books.png" id="13_ex_books"]
+
+[ext_resource type="Texture2D" path="res://art/props/exhibit_case.png" id="14_ex_case"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kln2b"]
 
@@ -20,6 +34,8 @@ script = ExtResource("1_pbw6q")
 customer_scene = ExtResource("2_v1gob")
 
 [node name="World" type="Node2D" parent="." unique_id=1366620290]
+
+[node name="Room" type="Node2D" parent="World"]
 [node name="Entities" type="Node2D" parent="World" unique_id=1319053931]
 
 [node name="shelf" type="Area2D" parent="World" unique_id=1357209414]
@@ -64,3 +80,61 @@ text = "+ $10 (test)"
 [node name="MoneyPopupSpawner" type="CanvasLayer" parent="."]
 script = ExtResource("6_popup_spawner")
 popup_scene = ExtResource("7_popup_scene")
+
+[node name="Walls" type="Node2D" parent="World/Room"]
+
+[node name="WallN" type="Sprite2D" parent="World/Room/Walls"]
+position = Vector2(0, -220)
+texture = ExtResource("8_wall_n")
+scale = Vector2(4, 1)
+
+[node name="WallS" type="Sprite2D" parent="World/Room/Walls"]
+position = Vector2(0, 220)
+texture = ExtResource("9_wall_s")
+scale = Vector2(4, 1)
+
+[node name="WallE" type="Sprite2D" parent="World/Room/Walls"]
+position = Vector2(420, 0)
+texture = ExtResource("10_wall_e")
+scale = Vector2(1, 3)
+
+[node name="WallW" type="Sprite2D" parent="World/Room/Walls"]
+position = Vector2(-420, 0)
+texture = ExtResource("11_wall_w")
+scale = Vector2(1, 3)
+
+[node name="Exhibit1" type="Area2D" parent="World/Room"]
+position = Vector2(200, -80)
+script = ExtResource("3_jw32o")
+price = 25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room/Exhibit1"]
+visible = false
+shape = SubResource("RectangleShape2D_kln2b")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room/Exhibit1"]
+texture = ExtResource("12_ex_sword")
+
+[node name="Exhibit2" type="Area2D" parent="World/Room"]
+position = Vector2(260, 80)
+script = ExtResource("3_jw32o")
+price = 40
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room/Exhibit2"]
+visible = false
+shape = SubResource("RectangleShape2D_kln2b")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room/Exhibit2"]
+texture = ExtResource("13_ex_books")
+
+[node name="Exhibit3" type="Area2D" parent="World/Room"]
+position = Vector2(120, 120)
+script = ExtResource("3_jw32o")
+price = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room/Exhibit3"]
+visible = false
+shape = SubResource("RectangleShape2D_kln2b")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Room/Exhibit3"]
+texture = ExtResource("14_ex_case")
