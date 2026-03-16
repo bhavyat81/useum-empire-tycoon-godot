@@ -1,14 +1,17 @@
 extends Node2D
 
 @export var customer_scene: PackedScene
-@export var spawn_interval_sec: float = 0.9
-@export var max_visitors_alive: int = 18
+@export var spawn_interval_sec: float = 1.2
+@export var max_visitors_alive: int = 12
 
 @onready var spawn_point: Marker2D = $World/SpawnPoint
+@onready var exit_point: Marker2D = $World/ExitPoint
 @onready var entities: Node2D = $World/Entities
 @onready var spawn_timer: Timer = $World/SpawnTimer
 
 func _ready() -> void:
+	randomize()
+
 	if customer_scene == null:
 		push_error("Main.gd: customer_scene not set in Inspector")
 		return
@@ -41,12 +44,11 @@ func _spawn_customer() -> void:
 	if exhibits.is_empty():
 		return
 
-	var target := exhibits[randi() % exhibits.size()]
-
 	var c := customer_scene.instantiate()
 	entities.add_child(c)
 	c.global_position = spawn_point.global_position
 
 	if c.has_method("setup"):
-		# setup(shelf, target)
-		c.setup(target, target)
+		c.setup(exhibits, exit_point)
+	else:
+		push_error("Spawned scene has no setup(exhibits, exit_target) method.")
