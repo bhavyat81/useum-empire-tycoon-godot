@@ -39,6 +39,10 @@ customer_scene = ExtResource("2_v1gob")
 
 [node name="World" type="Node2D" parent="." unique_id=1366620290]
 
+[node name="Camera2D" type="Camera2D" parent="World"]
+position = Vector2(0, 0)
+enabled = true
+
 [node name="Floor" type="TextureRect" parent="World"]
 position = Vector2(-384, -216)
 size = Vector2(768, 432)
