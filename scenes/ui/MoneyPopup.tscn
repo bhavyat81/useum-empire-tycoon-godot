@@ -1,0 +1,7 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/MoneyPopup.gd" id="1_popup_script"]
+
+[node name="MoneyPopup" type="Label"]
+text = "+0"
+script = ExtResource("1_popup_script")

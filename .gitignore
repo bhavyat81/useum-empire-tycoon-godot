@@ -16,3 +16,9 @@ Thumbs.db
 *.bak
 *.bak_*
 *.tmp
+
+# Godot import sidecar files
+*.import
+
+# Vendor asset packs
+artpacks/

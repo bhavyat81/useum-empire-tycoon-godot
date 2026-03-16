@@ -7,6 +7,9 @@
 [ext_resource type="Script" uid="uid://bf85lu5tkftc5" path="res://scripts/entities/Shelf.gd" id="3_jw32o"]
 [ext_resource type="Texture2D" path="res://art/props/exhibit.png" id="4_exhibit"]
 
+[ext_resource type="Script" path="res://scripts/ui/MoneyPopupSpawner.gd" id="6_popup_spawner"]
+[ext_resource type="PackedScene" path="res://scenes/ui/MoneyPopup.tscn" id="7_popup_scene"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kln2b"]
 
@@ -33,6 +36,9 @@ texture = ExtResource("4_exhibit")
 [node name="SpawnPoint" type="Marker2D" parent="World" unique_id=880850201]
 position = Vector2(-200, 0)
 
+[node name="SpawnTimer" type="Timer" parent="World"]
+
+
 [node name="UI" type="CanvasLayer" parent="." unique_id=1403642788]
 
 [node name="Hud" type="Control" parent="UI" unique_id=597629835]
@@ -54,3 +60,7 @@ text = "Money: 0"
 [node name="AddMoneyButton" type="Button" parent="UI/Hud/VBoxContainer" unique_id=1860189221]
 layout_mode = 2
 text = "+ $10 (test)"
+
+[node name="MoneyPopupSpawner" type="CanvasLayer" parent="."]
+script = ExtResource("6_popup_spawner")
+popup_scene = ExtResource("7_popup_scene")
