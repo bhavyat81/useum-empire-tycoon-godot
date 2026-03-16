@@ -80,7 +80,10 @@ customer_scene = ExtResource("2_v1gob")
 
 [node name="World" type="Node2D" parent="." unique_id=1366620290]
 
-[node name="Camera2D" type="Camera2D" parent="World"]
+[node name="Camera2D" type="Camera2D" parent="World/Entities/Manager"]
+smoothing_speed = 8.0
+smoothing_enabled = true
+zoom = Vector2(1.8, 1.8)
 position = Vector2(0, 0)
 enabled = true
 
@@ -95,6 +98,7 @@ position = Vector2(-120, 40)
 centered = true
 texture = ExtResource("90_museum_bg")
 position = Vector2(0, 0)
+scale = Vector2(1.5341, 1.5341)
 [node name="Walls" type="Node2D" parent="World/Room"]
 [node name="InteriorWalls" type="Node2D" parent="World/Room"]
 
@@ -259,7 +263,6 @@ collision_layer = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room/Exhibit3/SolidBlocker"]
 shape = SubResource("RectangleShape2D_exhibit_block")
 position = Vector2(220, -40)
-scale = Vector2(1.5341, 1.5341)
 script = ExtResource("3_jw32o")
 price = 15
 
