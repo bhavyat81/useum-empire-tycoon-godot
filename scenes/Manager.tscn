@@ -4,6 +4,7 @@
 [ext_resource type="SpriteFrames" path="res://art/characters/visitor/visitor_frames.tres" id="2_frames"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 12
 
 [node name="Manager" type="CharacterBody2D"]
 script = ExtResource("1_manager_script")
