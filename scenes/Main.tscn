@@ -26,6 +26,8 @@
 
 
 [ext_resource type="PackedScene" path="res://scenes/Manager.tscn" id="15_manager_scene"]
+[ext_resource type="Texture2D" path="res://art/tilesets/donarg/reference_museum_layout.png" id="90_museum_bg"]
+
 
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kln2b"]
@@ -49,38 +51,10 @@ y_sort_enabled = true
 y_sort_enabled = true
 [node name="Manager" parent="World/Entities" instance=ExtResource("15_manager_scene")]
 position = Vector2(-120, 40)
-
-[node name="IntroRoom" type="Node2D" parent="World/Room"]
-
-[node name="Title" type="Label" parent="World/Room/IntroRoom"]
-position = Vector2(-410, -300)
-text = "Introduction to Museum"
-
-[node name="Floor" type="ColorRect" parent="World/Room/IntroRoom"]
-color = Color(0.16, 0.16, 0.18, 1)
-position = Vector2(-420, -240)
-size = Vector2(840, 480)
-
-[node name="WallTop" type="ColorRect" parent="World/Room/IntroRoom"]
-color = Color(0.07, 0.07, 0.08, 1)
-position = Vector2(-440, -260)
-size = Vector2(880, 20)
-
-[node name="WallBottom" type="ColorRect" parent="World/Room/IntroRoom"]
-color = Color(0.07, 0.07, 0.08, 1)
-position = Vector2(-440, 240)
-size = Vector2(880, 20)
-
-[node name="WallLeft" type="ColorRect" parent="World/Room/IntroRoom"]
-color = Color(0.07, 0.07, 0.08, 1)
-position = Vector2(-440, -260)
-size = Vector2(20, 520)
-
-[node name="WallRight" type="ColorRect" parent="World/Room/IntroRoom"]
-color = Color(0.07, 0.07, 0.08, 1)
-position = Vector2(440, -260)
-size = Vector2(20, 520)
-
+[node name="MuseumBackground" type="Sprite2D" parent="World/Room"]
+centered = true
+texture = ExtResource("90_museum_bg")
+position = Vector2(0, 0)
 
 
 
@@ -148,6 +122,7 @@ texture = ExtResource("13_ex_books")
 
 [node name="Exhibit3" type="Area2D" parent="World/Room"]
 position = Vector2(220, -40)
+scale = Vector2(1.5341, 1.5341)
 script = ExtResource("3_jw32o")
 price = 15
 
