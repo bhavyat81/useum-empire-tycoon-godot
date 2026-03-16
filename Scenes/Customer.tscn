@@ -1,6 +1,7 @@
 [gd_scene format=3]
 
 [ext_resource type="Script" path="res://scripts/entities/Customer.gd" id="1_customer_script"]
+[ext_resource type="SpriteFrames" path="res://art/characters/visitor/visitor_frames.tres" id="2_frames"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1"]
 
@@ -12,3 +13,5 @@ shape = SubResource("CircleShape2D_1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
+sprite_frames = ExtResource("2_frames")
+animation = &"walk_down"

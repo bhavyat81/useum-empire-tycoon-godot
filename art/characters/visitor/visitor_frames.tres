@@ -1,0 +1,93 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/down_Walk_00.png" id="1_down_00"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/down_Walk_01.png" id="2_down_01"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/down_Walk_02.png" id="3_down_02"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/down_Walk_03.png" id="4_down_03"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/down_Walk_04.png" id="5_down_04"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/down_Walk_05.png" id="6_down_05"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/up_Walk_00.png" id="7_up_00"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/up_Walk_01.png" id="8_up_01"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/up_Walk_02.png" id="9_up_02"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/up_Walk_03.png" id="10_up_03"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/up_Walk_04.png" id="11_up_04"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/up_Walk_05.png" id="12_up_05"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/left_Walk_00.png" id="13_left_00"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/left_Walk_01.png" id="14_left_01"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/left_Walk_02.png" id="15_left_02"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/left_Walk_03.png" id="16_left_03"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/left_Walk_04.png" id="17_left_04"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/left_Walk_05.png" id="18_left_05"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/right_Walk_00.png" id="19_right_00"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/right_Walk_01.png" id="20_right_01"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/right_Walk_02.png" id="21_right_02"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/right_Walk_03.png" id="22_right_03"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/right_Walk_04.png" id="23_right_04"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/right_Walk_05.png" id="24_right_05"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/downLeft_Walk_00.png" id="25_downLeft_00"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/downLeft_Walk_01.png" id="26_downLeft_01"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/downLeft_Walk_02.png" id="27_downLeft_02"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/downLeft_Walk_03.png" id="28_downLeft_03"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/downLeft_Walk_04.png" id="29_downLeft_04"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/downLeft_Walk_05.png" id="30_downLeft_05"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/downRight_Walk_00.png" id="31_downRight_00"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/downRight_Walk_01.png" id="32_downRight_01"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/downRight_Walk_02.png" id="33_downRight_02"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/downRight_Walk_03.png" id="34_downRight_03"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/downRight_Walk_04.png" id="35_downRight_04"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/downRight_Walk_05.png" id="36_downRight_05"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/upLeft_Walk_00.png" id="37_upLeft_00"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/upLeft_Walk_01.png" id="38_upLeft_01"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/upLeft_Walk_02.png" id="39_upLeft_02"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/upLeft_Walk_03.png" id="40_upLeft_03"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/upLeft_Walk_04.png" id="41_upLeft_04"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/upLeft_Walk_05.png" id="42_upLeft_05"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/upRight_Walk_00.png" id="43_upRight_00"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/upRight_Walk_01.png" id="44_upRight_01"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/upRight_Walk_02.png" id="45_upRight_02"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/upRight_Walk_03.png" id="46_upRight_03"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/upRight_Walk_04.png" id="47_upRight_04"]
+[ext_resource type="Texture2D" path="res://art/characters/visitor/walk/upRight_Walk_05.png" id="48_upRight_05"]
+
+[resource]
+animations = [{
+"frames": [ExtResource("1_down_00"), ExtResource("2_down_01"), ExtResource("3_down_02"), ExtResource("4_down_03"), ExtResource("5_down_04"), ExtResource("6_down_05")],
+"loop": true,
+"name": &"walk_down",
+"speed": 10.0
+}, {
+"frames": [ExtResource("7_up_00"), ExtResource("8_up_01"), ExtResource("9_up_02"), ExtResource("10_up_03"), ExtResource("11_up_04"), ExtResource("12_up_05")],
+"loop": true,
+"name": &"walk_up",
+"speed": 10.0
+}, {
+"frames": [ExtResource("13_left_00"), ExtResource("14_left_01"), ExtResource("15_left_02"), ExtResource("16_left_03"), ExtResource("17_left_04"), ExtResource("18_left_05")],
+"loop": true,
+"name": &"walk_left",
+"speed": 10.0
+}, {
+"frames": [ExtResource("19_right_00"), ExtResource("20_right_01"), ExtResource("21_right_02"), ExtResource("22_right_03"), ExtResource("23_right_04"), ExtResource("24_right_05")],
+"loop": true,
+"name": &"walk_right",
+"speed": 10.0
+}, {
+"frames": [ExtResource("25_downLeft_00"), ExtResource("26_downLeft_01"), ExtResource("27_downLeft_02"), ExtResource("28_downLeft_03"), ExtResource("29_downLeft_04"), ExtResource("30_downLeft_05")],
+"loop": true,
+"name": &"walk_downLeft",
+"speed": 10.0
+}, {
+"frames": [ExtResource("31_downRight_00"), ExtResource("32_downRight_01"), ExtResource("33_downRight_02"), ExtResource("34_downRight_03"), ExtResource("35_downRight_04"), ExtResource("36_downRight_05")],
+"loop": true,
+"name": &"walk_downRight",
+"speed": 10.0
+}, {
+"frames": [ExtResource("37_upLeft_00"), ExtResource("38_upLeft_01"), ExtResource("39_upLeft_02"), ExtResource("40_upLeft_03"), ExtResource("41_upLeft_04"), ExtResource("42_upLeft_05")],
+"loop": true,
+"name": &"walk_upLeft",
+"speed": 10.0
+}, {
+"frames": [ExtResource("43_upRight_00"), ExtResource("44_upRight_01"), ExtResource("45_upRight_02"), ExtResource("46_upRight_03"), ExtResource("47_upRight_04"), ExtResource("48_upRight_05")],
+"loop": true,
+"name": &"walk_upRight",
+"speed": 10.0
+}]
