@@ -7,6 +7,8 @@
 radius = 12
 
 [node name="Manager" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 1
 script = ExtResource("1_manager_script")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

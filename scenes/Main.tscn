@@ -27,6 +27,7 @@
 
 [ext_resource type="PackedScene" path="res://scenes/Manager.tscn" id="15_manager_scene"]
 [ext_resource type="Texture2D" path="res://art/tilesets/donarg/reference_museum_layout.png" id="90_museum_bg"]
+[ext_resource type="Script" path="res://scripts/entities/Exhibit.gd" id="99_exhibit_script"]
 
 
 
@@ -98,62 +99,74 @@ position = Vector2(0, 0)
 [node name="InteriorWalls" type="Node2D" parent="World/Room"]
 
 [node name="IW_1" type="StaticBody2D" parent="World/Room/InteriorWalls"]
+collision_layer = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room/InteriorWalls/IW_1"]
 shape = SubResource("RectangleShape2D_iw_1")
 position = Vector2(0, -250)
 
 [node name="IW_2" type="StaticBody2D" parent="World/Room/InteriorWalls"]
+collision_layer = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room/InteriorWalls/IW_2"]
 shape = SubResource("RectangleShape2D_iw_2")
 position = Vector2(0, 40)
 
 [node name="IW_3" type="StaticBody2D" parent="World/Room/InteriorWalls"]
+collision_layer = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room/InteriorWalls/IW_3"]
 shape = SubResource("RectangleShape2D_iw_3")
 position = Vector2(-250, -110)
 
 [node name="IW_4" type="StaticBody2D" parent="World/Room/InteriorWalls"]
+collision_layer = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room/InteriorWalls/IW_4"]
 shape = SubResource("RectangleShape2D_iw_4")
 position = Vector2(250, -110)
 
 [node name="IW_5" type="StaticBody2D" parent="World/Room/InteriorWalls"]
+collision_layer = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room/InteriorWalls/IW_5"]
 shape = SubResource("RectangleShape2D_iw_5")
 position = Vector2(0, 260)
 
 [node name="IW_6" type="StaticBody2D" parent="World/Room/InteriorWalls"]
+collision_layer = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room/InteriorWalls/IW_6"]
 shape = SubResource("RectangleShape2D_iw_6")
 position = Vector2(-170, 190)
 
 [node name="IW_7" type="StaticBody2D" parent="World/Room/InteriorWalls"]
+collision_layer = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room/InteriorWalls/IW_7"]
 shape = SubResource("RectangleShape2D_iw_7")
 position = Vector2(170, 160)
 
 [node name="IW_8" type="StaticBody2D" parent="World/Room/InteriorWalls"]
+collision_layer = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room/InteriorWalls/IW_8"]
 shape = SubResource("RectangleShape2D_iw_8")
 position = Vector2(0, 120)
 
 
 [node name="WallTop" type="StaticBody2D" parent="World/Room/Walls"]
+collision_layer = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room/Walls/WallTop"]
 shape = SubResource("RectangleShape2D_wall_top")
 position = Vector2(0, -540)
 
 [node name="WallBottom" type="StaticBody2D" parent="World/Room/Walls"]
+collision_layer = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room/Walls/WallBottom"]
 shape = SubResource("RectangleShape2D_wall_bottom")
 position = Vector2(0, 540)
 
 [node name="WallLeft" type="StaticBody2D" parent="World/Room/Walls"]
+collision_layer = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room/Walls/WallLeft"]
 shape = SubResource("RectangleShape2D_wall_left")
 position = Vector2(-420, 0)
 
 [node name="WallRight" type="StaticBody2D" parent="World/Room/Walls"]
+collision_layer = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room/Walls/WallRight"]
 shape = SubResource("RectangleShape2D_wall_right")
 position = Vector2(420, 0)
@@ -162,11 +175,11 @@ position = Vector2(420, 0)
 
 
 [node name="SpawnPoint" type="Marker2D" parent="World" unique_id=880850201]
-position = Vector2(-520, 220)
+position = Vector2(0, 500)
 
 
 [node name="ExitPoint" type="Marker2D" parent="World"]
-position = Vector2(-520, 280)
+position = Vector2(0, 500)
 
 
 [node name="SpawnTimer" type="Timer" parent="World"]
@@ -200,8 +213,10 @@ popup_scene = ExtResource("7_popup_scene")
 
 
 [node name="Exhibit1" type="Area2D" parent="World/Room"]
+script = ExtResource("99_exhibit_script")
 
 [node name="SolidBlocker" type="StaticBody2D" parent="World/Room/Exhibit1"]
+collision_layer = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room/Exhibit1/SolidBlocker"]
 shape = SubResource("RectangleShape2D_exhibit_block")
@@ -217,8 +232,10 @@ shape = SubResource("RectangleShape2D_kln2b")
 texture = ExtResource("12_ex_sword")
 
 [node name="Exhibit2" type="Area2D" parent="World/Room"]
+script = ExtResource("99_exhibit_script")
 
 [node name="SolidBlocker" type="StaticBody2D" parent="World/Room/Exhibit2"]
+collision_layer = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room/Exhibit2/SolidBlocker"]
 shape = SubResource("RectangleShape2D_exhibit_block")
@@ -234,8 +251,10 @@ shape = SubResource("RectangleShape2D_kln2b")
 texture = ExtResource("13_ex_books")
 
 [node name="Exhibit3" type="Area2D" parent="World/Room"]
+script = ExtResource("99_exhibit_script")
 
 [node name="SolidBlocker" type="StaticBody2D" parent="World/Room/Exhibit3"]
+collision_layer = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Room/Exhibit3/SolidBlocker"]
 shape = SubResource("RectangleShape2D_exhibit_block")
