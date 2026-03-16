@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://jv3o6hmph52s"]
+
+[ext_resource type="Script" uid="uid://bfsmj8m4y1q7i" path="res://scripts/Hud.gd" id="1_1"]
+[ext_resource type="Script" uid="uid://d31id523fk8mw" path="res://scripts/entities/Customer.gd" id="1_idj7w"]
+[ext_resource type="Script" uid="uid://dpo1dpjw2d51r" path="res://scripts/Main.gd" id="1_pbw6q"]
+[ext_resource type="PackedScene" uid="uid://4lxbn15fh6et" path="res://Scenes/Customer.tscn" id="2_v1gob"]
+[ext_resource type="Script" uid="uid://bf85lu5tkftc5" path="res://scripts/entities/Shelf.gd" id="3_jw32o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kln2b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rgh2o"]
+
+[node name="Main" type="Node2D" unique_id=587622056]
+script = ExtResource("1_pbw6q")
+customer_scene = ExtResource("2_v1gob")
+
+[node name="World" type="Node2D" parent="." unique_id=1366620290]
+
+[node name="Entities" type="Node2D" parent="World" unique_id=1319053931]
+
+[node name="shelf" type="Area2D" parent="World" unique_id=1357209414]
+position = Vector2(200, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/shelf" unique_id=1847324654]
+visible = false
+shape = SubResource("RectangleShape2D_kln2b")
+
+[node name="Customer" type="CharacterBody2D" parent="World/shelf/CollisionShape2D" unique_id=736904338]
+script = ExtResource("1_idj7w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/shelf/CollisionShape2D/Customer" unique_id=1045410266]
+shape = SubResource("CircleShape2D_rgh2o")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/shelf" unique_id=1052252330]
+
+[node name="SpawnPoint" type="Marker2D" parent="World" unique_id=880850201]
+position = Vector2(-200, 0)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1403642788]
+
+[node name="Hud" type="Control" parent="UI" unique_id=597629835]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 16.0
+offset_bottom = 16.0
+script = ExtResource("1_1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Hud" unique_id=55911711]
+layout_mode = 0
+
+[node name="MoneyLabel" type="Label" parent="UI/Hud/VBoxContainer" unique_id=1037544500]
+layout_mode = 2
+text = "Money: 0"
+
+[node name="AddMoneyButton" type="Button" parent="UI/Hud/VBoxContainer" unique_id=1860189221]
+layout_mode = 2
+text = "+ $10 (test)"
