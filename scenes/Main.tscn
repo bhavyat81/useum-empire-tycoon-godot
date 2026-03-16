@@ -26,6 +26,8 @@
 
 [ext_resource type="Texture2D" path="res://art/tiles/floor.png" id="5_floor"]
 
+[ext_resource type="PackedScene" path="res://scenes/Manager.tscn" id="15_manager_scene"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kln2b"]
 
@@ -47,6 +49,9 @@ tile = true
 y_sort_enabled = true
 [node name="Entities" type="Node2D" parent="World" unique_id=1319053931]
 y_sort_enabled = true
+[node name="Manager" parent="World/Entities" instance=ExtResource("15_manager_scene")]
+position = Vector2(-120, 40)
+
 
 
 [node name="SpawnPoint" type="Marker2D" parent="World" unique_id=880850201]

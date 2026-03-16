@@ -32,3 +32,10 @@ window/stretch/mode="canvas_items"
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+
+[input]
+
+move_up={"deadzone":0.5,"events":[Object(InputEventKey,"keycode":87), Object(InputEventKey,"keycode":4194320)]}
+move_down={"deadzone":0.5,"events":[Object(InputEventKey,"keycode":83), Object(InputEventKey,"keycode":4194322)]}
+move_left={"deadzone":0.5,"events":[Object(InputEventKey,"keycode":65), Object(InputEventKey,"keycode":4194319)]}
+move_right={"deadzone":0.5,"events":[Object(InputEventKey,"keycode":68), Object(InputEventKey,"keycode":4194321)]}
