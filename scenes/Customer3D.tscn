@@ -1,0 +1,28 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/entities/Customer3D.gd" id="1_customer_script"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_capsule"]
+radius = 0.32
+height = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_customer"]
+albedo_color = Color(0.2, 0.55, 1, 1)
+roughness = 0.85
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_customer"]
+radius = 0.32
+mid_height = 1.0
+
+[node name="Customer3D" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 1
+script = ExtResource("1_customer_script")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_capsule")
+
+[node name="Visual" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_customer")
+material_override = SubResource("StandardMaterial3D_customer")
+position = Vector3(0, 0.9, 0)

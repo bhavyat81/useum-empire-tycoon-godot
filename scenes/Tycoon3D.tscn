@@ -1,7 +1,11 @@
 [gd_scene format=3]
+[ext_resource type="Texture2D" path="res://art/generated/floor_tile_3d.png" id="20_floor_tex"]
+[ext_resource type="Texture2D" path="res://art/generated/wall_tile_3d.png" id="21_wall_tex"]
 
 [ext_resource type="PackedScene" path="res://scenes/Player3D.tscn" id="1_player"]
 [ext_resource type="Script" path="res://scripts/FollowCamera3D.gd" id="2_follow_cam"]
+[ext_resource type="PackedScene" path="res://scenes/Customer3D.tscn" id="3_customer3d"]
+[ext_resource type="Script" path="res://scripts/CustomerSpawner3D.gd" id="4_spawner"]
 
 [sub_resource type="Environment" id="Environment_1"]
 background_mode = 1
@@ -10,10 +14,14 @@ ambient_light_source = 2
 ambient_light_energy = 0.8
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_floor"]
+albedo_texture = ExtResource("20_floor_tex")
+uv1_scale = Vector3(10, 10, 10)
 albedo_color = Color(0.96, 0.92, 0.84, 1)
 roughness = 0.95
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wall"]
+albedo_texture = ExtResource("21_wall_tex")
+uv1_scale = Vector3(6, 2, 6)
 albedo_color = Color(0.92, 0.15, 0.15, 1)
 roughness = 0.7
 
@@ -21,16 +29,39 @@ roughness = 0.7
 size = Vector2(36, 26)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wall_h"]
-size = Vector3(36, 1.2, 1.2)
+size = Vector3(36, 2.4, 1.2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wall_v"]
-size = Vector3(1.2, 1.2, 26)
+size = Vector3(1.2, 2.4, 26)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wall_h"]
-size = Vector3(36, 1.2, 1.2)
+size = Vector3(36, 2.4, 1.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wall_v"]
-size = Vector3(1.2, 1.2, 26)
+size = Vector3(1.2, 2.4, 26)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wall_south_left"]
+size = Vector3(10, 2.4, 1.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wall_south_right"]
+size = Vector3(22, 2.4, 1.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wall_south_left"]
+size = Vector3(10, 2.4, 1.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wall_south_right"]
+size = Vector3(22, 2.4, 1.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_door"]
+albedo_color = Color(0.15, 0.1, 0.05, 1)
+roughness = 0.8
+
+[sub_resource type="BoxMesh" id="BoxMesh_door_post"]
+size = Vector3(0.25, 2.2, 0.25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_door_lintel"]
+size = Vector3(2.0, 0.25, 0.25)
+
 
 [node name="Tycoon3D" type="Node3D"]
 
@@ -45,7 +76,7 @@ environment = SubResource("Environment_1")
 [node name="Floor" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_floor")
 material_override = SubResource("StandardMaterial3D_floor")
-position = Vector3(0, 0, 0)
+position = Vector3(0, -0.02, 0)
 
 [node name="Walls" type="Node3D" parent="."]
 
@@ -55,15 +86,7 @@ shape = SubResource("BoxShape3D_wall_h")
 [node name="Visual" type="MeshInstance3D" parent="Walls/NorthWall"]
 mesh = SubResource("BoxMesh_wall_h")
 material_override = SubResource("StandardMaterial3D_wall")
-position = Vector3(0, 0.6, -13)
-
-[node name="SouthWall" type="StaticBody3D" parent="Walls"]
-[node name="Collider" type="CollisionShape3D" parent="Walls/SouthWall"]
-shape = SubResource("BoxShape3D_wall_h")
-[node name="Visual" type="MeshInstance3D" parent="Walls/SouthWall"]
-mesh = SubResource("BoxMesh_wall_h")
-material_override = SubResource("StandardMaterial3D_wall")
-position = Vector3(0, 0.6, 13)
+position = Vector3(0, 1.2, -13)
 
 [node name="WestWall" type="StaticBody3D" parent="Walls"]
 [node name="Collider" type="CollisionShape3D" parent="Walls/WestWall"]
@@ -71,7 +94,7 @@ shape = SubResource("BoxShape3D_wall_v")
 [node name="Visual" type="MeshInstance3D" parent="Walls/WestWall"]
 mesh = SubResource("BoxMesh_wall_v")
 material_override = SubResource("StandardMaterial3D_wall")
-position = Vector3(-18, 0.6, 0)
+position = Vector3(-18, 1.2, 0)
 
 [node name="EastWall" type="StaticBody3D" parent="Walls"]
 [node name="Collider" type="CollisionShape3D" parent="Walls/EastWall"]
@@ -79,7 +102,58 @@ shape = SubResource("BoxShape3D_wall_v")
 [node name="Visual" type="MeshInstance3D" parent="Walls/EastWall"]
 mesh = SubResource("BoxMesh_wall_v")
 material_override = SubResource("StandardMaterial3D_wall")
-position = Vector3(18, 0.6, 0)
+position = Vector3(18, 1.2, 0)
+
+[node name="SouthWallLeft" type="StaticBody3D" parent="Walls"]
+[node name="Collider" type="CollisionShape3D" parent="Walls/SouthWallLeft"]
+shape = SubResource("BoxShape3D_wall_south_left")
+[node name="Visual" type="MeshInstance3D" parent="Walls/SouthWallLeft"]
+mesh = SubResource("BoxMesh_wall_south_left")
+material_override = SubResource("StandardMaterial3D_wall")
+position = Vector3(-7, 1.2, 13)
+
+[node name="SouthWallRight" type="StaticBody3D" parent="Walls"]
+[node name="Collider" type="CollisionShape3D" parent="Walls/SouthWallRight"]
+shape = SubResource("BoxShape3D_wall_south_right")
+[node name="Visual" type="MeshInstance3D" parent="Walls/SouthWallRight"]
+mesh = SubResource("BoxMesh_wall_south_right")
+material_override = SubResource("StandardMaterial3D_wall")
+position = Vector3(7, 1.2, 13)
+
+[node name="EntryPoint" type="Marker3D" parent="."]
+position = Vector3(-16.5, 0, 12)
+
+[node name="ExitPoint" type="Marker3D" parent="."]
+position = Vector3(-16.5, 0, 12)
+
+[node name="DoorFrame" type="Node3D" parent="."]
+position = Vector3(-16.5, 0, 13)
+
+[node name="LeftPost" type="MeshInstance3D" parent="DoorFrame"]
+mesh = SubResource("BoxMesh_door_post")
+material_override = SubResource("StandardMaterial3D_door")
+position = Vector3(-0.8, 1.1, 0)
+
+[node name="RightPost" type="MeshInstance3D" parent="DoorFrame"]
+mesh = SubResource("BoxMesh_door_post")
+material_override = SubResource("StandardMaterial3D_door")
+position = Vector3(0.8, 1.1, 0)
+
+[node name="Lintel" type="MeshInstance3D" parent="DoorFrame"]
+mesh = SubResource("BoxMesh_door_lintel")
+material_override = SubResource("StandardMaterial3D_door")
+position = Vector3(0, 2.25, 0)
+
+[node name="Customers" type="Node3D" parent="."]
+
+[node name="CustomerSpawner3D" type="Node" parent="."]
+script = ExtResource("4_spawner")
+customer_scene = ExtResource("3_customer3d")
+spawn_interval = 1.2
+max_alive = 10
+entry_path = NodePath("../EntryPoint")
+exit_path = NodePath("../ExitPoint")
+container_path = NodePath("../Customers")
 
 [node name="Player" parent="." instance=ExtResource("1_player")]
 position = Vector3(-16, 0, 11)
